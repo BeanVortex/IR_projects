@@ -7,14 +7,16 @@ public class ConvertingS1ToS2 {
     public static void main(String[] args) {
         try (var in = new Scanner(System.in)) {
 
+            System.out.print("Enter S1 => ");
             var s1 = in.nextLine();
+            System.out.print("Enter S2 => ");
             var s2 = in.nextLine();
 
             System.out.printf("At least we need %d changes to convert %s to %s", findEditDistance(s1, s2), s1, s2);
         }
     }
 
-    private static int findEditDistance(String s1, String s2) {
+    public static int findEditDistance(String s1, String s2) {
         var arr = new int[s1.length() + 1][s2.length() + 1];
 
         for (int i = 0; i < s1.length(); i++)
